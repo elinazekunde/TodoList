@@ -18,6 +18,9 @@ class TodoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         // Do any additional setup after loading the view.
@@ -40,13 +43,18 @@ class TodoTableViewController: UIViewController, UITableViewDelegate, UITableVie
             textField.autocapitalizationType = .sentences
             textField.autocorrectionType = .no
         }
+        alertController.addTextField { (detailsField: UITextField) in
+            detailsField.placeholder = "Enter additional details"
+        }
         
         let addAction = UIAlertAction(title: "Add", style: .cancel) { (action: UIAlertAction) in
             let textField = alertController.textFields?.first
-           
+            let detailsField = alertController.textFields?.last
+            
             let entity = NSEntityDescription.entity(forEntityName: "Todo", in: self.context!)
             let item = NSManagedObject(entity: entity!, insertInto: self.context)
             item.setValue(textField?.text, forKey: "item")
+            item.setValue(detailsField?.text, forKey: "details")
             
             self.saveData()
         }
@@ -87,10 +95,12 @@ class TodoTableViewController: UIViewController, UITableViewDelegate, UITableVie
             let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell",for: indexPath)
             let item = todoList[indexPath.row]
             cell.textLabel?.text = item.value(forKey: "item") as? String
+            cell.detailTextLabel?.text = item.value(forKey: "details") as? String
             cell.accessoryType = item.completed ? .checkmark : .none
             cell.selectionStyle = .none
             return cell
         }
+    
     
     //MARK: - Table view delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

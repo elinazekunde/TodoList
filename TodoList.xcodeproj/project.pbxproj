@@ -14,6 +14,7 @@
 		1B8F342625CC2051004EEA39 /* TodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F342425CC2051004EEA39 /* TodoList.xcdatamodeld */; };
 		1B8F342825CC2055004EEA39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F342725CC2055004EEA39 /* Assets.xcassets */; };
 		1B8F342B25CC2055004EEA39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F342925CC2055004EEA39 /* LaunchScreen.storyboard */; };
+		1B8F343B25CD4195004EEA39 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F343A25CD4195004EEA39 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1B8F342725CC2055004EEA39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B8F342A25CC2055004EEA39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B8F342C25CC2055004EEA39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B8F343A25CD4195004EEA39 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				1B8F342925CC2055004EEA39 /* LaunchScreen.storyboard */,
 				1B8F342C25CC2055004EEA39 /* Info.plist */,
 				1B8F342425CC2051004EEA39 /* TodoList.xcdatamodeld */,
+				1B8F343A25CD4195004EEA39 /* InfoViewController.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				1B8F341C25CC2051004EEA39 /* AppDelegate.swift in Sources */,
 				1B8F341E25CC2051004EEA39 /* SceneDelegate.swift in Sources */,
 				1B8F342625CC2051004EEA39 /* TodoList.xcdatamodeld in Sources */,
+				1B8F343B25CD4195004EEA39 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
